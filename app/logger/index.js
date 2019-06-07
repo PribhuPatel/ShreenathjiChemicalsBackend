@@ -1,10 +1,19 @@
 const winston = require('winston');
-const logger = new winston.Logger({
+// const logger = new winston.Logger({
+//   level: 'error',
+//   transports: [
+//     new (winston.transports.Console)(),
+//     new (winston.transports.File)({ filename: __dirname+'/error-log.log' })
+//   ]
+// });
+
+const logger = winston.createLogger({
   level: 'error',
   transports: [
     new (winston.transports.Console)(),
     new (winston.transports.File)({ filename: __dirname+'/error-log.log' })
-  ]
+  ],
+  exitOnError: false, // do not exit on handled exceptions
 });
 
 const errQueryOptions = {
