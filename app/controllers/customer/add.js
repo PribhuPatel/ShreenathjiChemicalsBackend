@@ -11,5 +11,7 @@ exports.add = async (req, res) => {
     // res.json(data);
 
 
+    console.log(req.get('userName') +" Added customer :" +data.name);
+
     handler.yahResponse(res, {status:true});
 };

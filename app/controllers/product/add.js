@@ -16,7 +16,8 @@ exports.add = async (req, res) => {
 
     // const customer = await customersModel.findByIdAndUpdate(customerId, { $push: { "payments": data }},{upsert:true});
     // res.json(data);
-    console.log(data);
+    console.log(req.get('userName') +" added Product name:"+data.name);
+
 
     handler.yahResponse(res, {status:true});
 };

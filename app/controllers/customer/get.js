@@ -7,6 +7,7 @@ exports.getAll = async (req, res) => {
     let customers = await customersModel.find({},'name');
     // if (customerData) return handler.errorMessage(res, {error:'Already Inserted'});
 
+    // console.log(req.headers);
     handler.yahResponse(res, {customers:customers});
 };
 

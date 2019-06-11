@@ -12,12 +12,12 @@ exports.getAll = async (req, res) => {
     handler.yahResponse(res, {products:products});
 };
 
-exports.get = async  (req,res)=>{
-        let customerId = req.params.id;
-        let customer = await customersModel.find({_id:customerId},'name gst phone address payment');
-        console.log(customer[0]);
-        handler.yahResponse(res,{customer:customer[0]});
-};
+// exports.get = async  (req,res)=>{
+//         let customerId = req.params.id;
+//         let customer = await customersModel.find({_id:customerId},'name gst phone address payment');
+//         console.log(customer[0]);
+//         handler.yahResponse(res,{customer:customer[0]});
+// };
 exports.getName = async  (req,res)=>{
     let products = await productsModel.find({},'name sell_price');
     // if (customerData) return handler.errorMessage(res, {error:'Already Inserted'});

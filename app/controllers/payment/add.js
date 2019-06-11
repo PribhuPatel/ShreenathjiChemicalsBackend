@@ -12,9 +12,10 @@ exports.add = async (req, res) => {
     // const customerData = await customersModel.updateOne({ });
     // if (customerData) return handler.errorMessage(res, {error:'Already Inserted'});
 
+    console.log(req.get('userName') +" added payment of Rs. "+payment+" to customer "+customer.name);
     // const customer = await customersModel.findByIdAndUpdate(customerId, { $push: { "payments": data }},{upsert:true});
     // res.json(data);
-    console.log(data);
+    // console.log(data);
 
     handler.yahResponse(res, {status:true,customer});
 };

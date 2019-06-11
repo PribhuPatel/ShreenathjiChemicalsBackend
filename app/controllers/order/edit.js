@@ -20,6 +20,8 @@ exports.edit = async (req, res) => {
     // console.log(payment);
     let customer = await customersModel.findByIdAndUpdate(customerId, { $inc: {payment:((payment.amount*(-1)) + (quantity * price * (-1)))}});
 
+    console.log(req.get('userName') +" edited Order with Order Id=" + data._id +" of Rs. "+payment.amount+" to customer "+customer.name);
+
     // console.log(customer.payment);
     // const customerData = await customersModel.updateOne({ });
     // if (customerData) return handler.errorMessage(res, {error:'Already Inserted'});
