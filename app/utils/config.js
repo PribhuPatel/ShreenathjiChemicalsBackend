@@ -13,8 +13,8 @@ module.exports = {
         connectionLimit: 10
     },
     mongoDB : {
-        host : 'localhost',
-        // host:'159.89.162.38',
+        // host : 'localhost',
+        host:'159.89.162.38',
         database : 'shreenathji'
     },
     /* do not change this salrounds value */
