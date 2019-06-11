@@ -16,9 +16,11 @@ exports.getAll = async (req, res) => {
 
 exports.get = async  (req,res)=>{
         let customerId = req.params.id;
-        let orders = await ordersModel.find({customer:customerId}).populate('product');
+        let skip = req.query.skip;
+        let orders = await ordersModel.find({customer:customerId}).populate({path:'product',select: 'name'}).sort({_id:-1}).skip(Number(skip)).limit(10);
     // if (customerData) return handler.errorMessage(res, {error:'Already Inserted'});
 
+    // console.log(orders)
     handler.yahResponse(res, {orders:orders});
 };
 

@@ -11,8 +11,8 @@ exports.login = async (req, res) => {
   /* now check password */
   const isPasswordValid = await bcrypter.checkPassword(password, userData.password);
   /* send error message if password doesn't match */
-  if (!isPasswordValid) return handler.errorMessage(res, 'Invalid Password');
+  if (!isPasswordValid) return handler.errorMessage(res, {error:'Invalid Password'});
   /* create token wit some data, do not put password in it */
-  const token = await tokenHandler.createToken({ data: userData._id });
-  handler.yahResponse(res, {token:token,name:userData.name});
+  const token = await tokenHandler.createToken({ id: userData._id ,name:userData.name,type:userData.type});
+  handler.yahResponse(res, {token:token,name:userData.name,type:userData.type});
 };

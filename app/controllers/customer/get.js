@@ -12,7 +12,9 @@ exports.getAll = async (req, res) => {
 
 exports.get = async  (req,res)=>{
         let customerId = req.params.id;
-        let customer = await customersModel.find({_id:customerId},'name gst phone address payment payments').populate({path:'payments',select:'amount date'});
-        console.log(customer[0]);
+        // let customer = await customersModel.find({_id:customerId},'name gst phone address payment payments').populate({path:'payments',select:'amount date description'});
+    let customer = await customersModel.find({_id:customerId},'name gst phone address payment payments');
+
+        // console.log(customer[0]);
         handler.yahResponse(res,{customer:customer[0]});
 };

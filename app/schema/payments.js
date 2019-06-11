@@ -18,6 +18,11 @@ const paymentsSchema = new Schema({
         required: true,
         type: String
     },
+    description:{
+        required:true,
+        type:String
+    },
+    order:{ type: Schema.Types.ObjectId, ref: 'customers' ,required:false},
     date: {type:Date,default:Date.now(),required:true}
 });
 

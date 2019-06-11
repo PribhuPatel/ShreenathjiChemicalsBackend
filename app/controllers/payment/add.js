@@ -3,10 +3,10 @@ const { paymentsModel} = require('../../schema/payments');
 const handler = require('../../utils/responseHandler');
 
 exports.add = async (req, res) => {
-    const { customerId, payment } = { ...req.body };
+    const { customerId, payment,description,date } = { ...req.body };
     /* first check user exists or not , if exists check password */
 
-    let data = await paymentsModel.create({ customer:customerId, amount:payment, type:"Cash",status:"Approved" });
+    let data = await paymentsModel.create({ customer:customerId, amount:payment, type:"Cash",status:"Approved",description,date });
     // let customerData =
        let customer = await customersModel.findByIdAndUpdate(customerId, { $inc: {payment:payment},$push:{payments:data}},{new: true,select:'name address gst phone payment payments'});
     // const customerData = await customersModel.updateOne({ });

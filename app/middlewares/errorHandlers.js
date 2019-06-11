@@ -1,13 +1,14 @@
 
 /* this js file halps us in handling erros */
 
-const { logTheError } = require('../logger');
+// const { logTheError } = require('../logger');
 
 module.exports = {
   handleDevErrors: async (err, req, res, next) => {
     /* log the error using winston for all production errors */
-    logTheError(err.stack);
+    // logTheError(err.stack);
     /* this is for pure API base */
+    console.log(err)
     if (process.env.NODE_ENV === 'development') { return res.status(500).json({ status: false, stack: err.stack }); }
     res.status(500).json({ status: false, message: 'something went wrong' });
   },

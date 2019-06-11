@@ -8,6 +8,9 @@ const usersSchema = new Schema({
         required: true,
         type: Number,
     },
+    type:{
+      type:String,
+    },
     password: {
         type: String,
         required: true,
@@ -15,7 +18,7 @@ const usersSchema = new Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
+        // unique: true,
     },
     created_at: {
         type: Date,
