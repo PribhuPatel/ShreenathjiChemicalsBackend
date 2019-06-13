@@ -1,0 +1,33 @@
+{
+  "name": "shreenathjichemicals",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=production pm2 start app.js",
+    "bin": "cross-env NODE_ENV=development nodemon app.js",
+    "test": "mocha ./app/test"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "compression": "*",
+    "cookie-parser": "*",
+    "cors": "*",
+    "debug": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "mysql": "*",
+    "pug": "2.0.3",
+    "serve-favicon": "*",
+    "validator": "*",
+    "winston": "*"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "chai-http": "*",
+    "cross-env": "*",
+    "mocha": "*"
+  }
+}
