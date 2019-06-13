@@ -19,7 +19,7 @@ module.exports = {
         port: '10013',
         database : 'shreenathji',
         user : 'shreenathji',
-        password: 'pribhu@54321'
+        password: 'pribhu_54321'
     },
     /* do not change this salrounds value */
     bycryptSalt : 13
